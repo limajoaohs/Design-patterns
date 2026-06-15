@@ -1,0 +1,10 @@
+cat << 'EOF' > .gitignore
+*.class
+bin/
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+EOF
