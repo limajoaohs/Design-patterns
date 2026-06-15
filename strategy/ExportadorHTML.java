@@ -1,12 +1,16 @@
 package strategy;
 
-public class ExportadorHTML extends ExportadorComum {
-	@Override
-	protected String abrirDocumento() { return "<html><body>\n"; }
+import java.util.List;
+
+public class ExportadorHTML implements Exportador {
 
 	@Override
-	protected String formatarParagrafo(String paragrafo) { return "<p>" + paragrafo + "</p>\n"; }
+	public String exportar(List<String> paragrafos) {
 
-	@Override
-	protected String fecharDocumento() { return "</body></html>"; }
+		String res = "<html><body>\n";
+		for (String parag : paragrafos) {
+			res += "<p>" + parag + "</p>\n";
+		}
+		return res + "</body></html>";
+	}
 }

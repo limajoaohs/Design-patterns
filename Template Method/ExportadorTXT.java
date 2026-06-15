@@ -2,15 +2,20 @@ package strategy;
 
 import java.util.List;
 
-public class ExportadorTXT implements Exportador {
+public class ExportadorTXT extends ExportadorComum {
 
 	@Override
-	public String exportar(List<String> paragrafos) {
-		String res = "";
+	protected String abrirDocumento() {
+		return "";
+	}
 
-		for (String parag : paragrafos) {
-			res += parag + "\n";
-		}
-		return res;
+	@Override
+	protected String formatarParagrafo(String paragrafo) {
+		return paragrafo + "\n";
+	}
+
+	@Override
+	protected String fecharDocumento() {
+		return "";
 	}
 }
